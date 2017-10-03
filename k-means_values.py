@@ -61,6 +61,5 @@ for i in range(6):
     mean=np.array(mean)
     cluster_info['cluster' + str(i)] =  mean
 
-cluster_info
-
+# 保存
 cluster_info.to_excel('cluster_all_6.xlsx')
