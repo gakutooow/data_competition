@@ -1,3 +1,5 @@
+#  航空会社のアクセスログデータを用いて、日付ごとのアクセス数をプロット
+
 import pandas as pd
 import numpy as np
 from pandas import Series,DataFrame
