@@ -21,7 +21,7 @@ bn.fit(net.estimated, bnlearnR ,method = "mle")
 
 
 if(0){
-
+コメントアウト
 
 library(forecast)
 training.set = bnlearnR[1:1245, ]
