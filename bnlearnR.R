@@ -12,17 +12,57 @@ for (i in 1:2490){
  	}
  }
 
-print(hc(bnlearnR))
-net.estimated = model2network("")
+to1<- t(rep("AGE", length=15))
+to2<- t(rep("sex", length=15))
+to<-t(cbind(to1,to2))
+
+from1=t(c(
+"sex",
+"MARRIAGE",
+"Child",
+"mixi",
+"Twittr",
+"Facebook",
+"instagram",
+"LINE",
+"mobage",
+"GREE",
+"youtube",
+"nikoniko",
+"Vine",
+"kirin",
+"redbull"
+))
+from2<-t(c(
+"AGE",
+"MARRIAGE",
+"Child",
+"mixi",
+"Twittr",
+"Facebook",
+"instagram",
+"LINE",
+"mobage",
+"GREE",
+"youtube",
+"nikoniko",
+"Vine",
+"kirin",
+"redbull"
+))
+from<-t(cbind(from1,from2))
+
+
+print(hc(bnlearnR,blacklist=data.frame(from=from,to=to)))
+
+net.estimated = model2network("  ")
 graphviz.plot(net.estimated, shape = "ellipse")
 
 bn.fit(net.estimated, bnlearnR ,method = "mle")
 
 
 
-if(0){
-コメントアウト
-
+/*
 library(forecast)
 training.set = bnlearnR[1:1245, ]
 test.set = bnlearnR[1246:2490, ]
@@ -41,4 +81,4 @@ p <- p + geom_line(data = data.frame(x = c(0,40), y = c(0,40)),aes(x = x, y = y)
 p
 
 
-}
+*/
