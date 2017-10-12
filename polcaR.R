@@ -36,6 +36,6 @@ for(i in 2:7){
 }
 LCA_best_model
 
-#citing
+#citation
 #http://dlinzer.github.io/poLCA/
 #http://statistics.ohlsen-web.de/latent-class-analysis-polca/
