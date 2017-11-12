@@ -14,9 +14,13 @@ for(i in 1:2854){
     }
   }
 }
+values<-t(values)
+values<-as.data.frame(values)
+values<-values[0:99]
+
 
 #nameにデータフレームのカラム名を入れる
-name<-names(values)
+name<-colnames(values)
 
 #知恵袋的なところで見つけたコード。これやるとうまくいった。http://r.789695.n4.nabble.com/cbind-formula-definition-td903703.html
 f <- as.formula(paste("cbind(", paste(name, collapse = ","), ")~1"))
