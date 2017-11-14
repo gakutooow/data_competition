@@ -32,13 +32,15 @@ min_bic <- 100000
 for(i in 2:7){
   lc <- poLCA(f, values, nclass=i, maxiter=3000,
               tol=1e-5, na.rm=FALSE,
-              nrep=10, verbose=TRUE, calc.se=TRUE)
+              nrep=10, verbose=TRUE, calc.se=TRUE,graphs=TRUE)
   if(lc$bic < min_bic){
     min_bic <- lc$bic
     LCA_best_model<-lc
   }
 }
 LCA_best_model
+
+LCA_best_model$predclass
 
 #citation
 #http://dlinzer.github.io/poLCA/
