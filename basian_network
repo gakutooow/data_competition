@@ -8,7 +8,7 @@ print(dim(data))
 
 for (i in 1:51){
 +     for(j in 1:22){
-+         data[i,j]<-as.numeric(data[i,j])
++         data[i,j]<-as.integer(data[i,j])
 +     }
 + }
 
