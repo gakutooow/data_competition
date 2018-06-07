@@ -6,15 +6,17 @@ data <- read.csv(file = "data.csv")
 
 print(dim(data))
 
+df <- data.frame()
+
 for (i in 1:51){
-+     for(j in 1:22){
-+         data[i,j]<-as.integer(data[i,j])
-+     }
-+ }
+     for(j in 1:22){
+         df[i,j]<-as.integer(data[i,j])
+     }
+ }
 
-print(hc(data))
+print(hc(df))
 
-modelstring = paste("[x6][x13][x15][x12|x6][x14|x13][x7|x6:x14][x4|x7:x15][x8|x7:x15][x9|x6:x8][x11|x4:x14][x2|x7:x11][x5|x11][x17|x9][x1|x2:x8][x3|x2:x8][x21|x8:x17][x10|x1:x7:x12][x18|x2:x3:x17][x19|x18][x16|x9:x19][x20|x19:x21][x22|x6:x16]", sep = "")
+modelstring = paste(" ", sep = "")
 dag = model2network(modelstring)
 graphviz.plot(dag)
 
