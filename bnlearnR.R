@@ -58,10 +58,12 @@ from<-t(cbind(from1,from2))
 
 print(hc(bnlearnR,blacklist=data.frame(from=from,to=to)))
 
-net.estimated = model2network("  ")
-graphviz.plot(net.estimated, shape = "ellipse")
+modelstring = paste("   ", sep = "")
+dag = model2network(modelstring)
+graphviz.plot(dag)
 
-bn.fit(net.estimated, bnlearnR ,method = "mle")
+
+
 
 
 
